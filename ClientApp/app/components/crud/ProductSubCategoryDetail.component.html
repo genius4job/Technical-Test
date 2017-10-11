@@ -1,0 +1,37 @@
+﻿<h1>
+    List of SubCategories
+</h1>
+
+<p *ngIf="!productSubCategory"><em>Loading...</em></p>
+<table class='table' *ngIf="productSubCategory">
+    <thead>
+        <tr><td><input #search style="width:500px" (keyup)="0"> Search</td></tr>
+        <tr>
+            <td>
+                <button class="btn btn-primary" [routerLink]="['/product-sub-category/0']">
+                    <span class="glyphicon glyphicon-pencil paddingRight"></span> Add
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <!--<th>Id</th>-->
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let itemsp of productSubCategory |   paginate: { itemsPerPage: 5, currentPage: p }  | searchFilter: search.value ">
+            <!--<td>{{itemsp.productSubCategoryId}}</td>-->
+            <td>{{ itemsp.name }}</td>
+            <td>
+                <button class="btn btn-primary" [routerLink]="['/product-sub-category/' + itemsp.productSubCategoryId]">
+                    <span class="glyphicon glyphicon-pencil paddingRight"></span> Edit
+                </button>
+                <button class="btn btn-primary" (click)="onDelete(itemsp.productSubCategoryId)">
+                    <span class="glyphicon glyphicon-remove"></span> Delete
+                </button>
+            </td>
+        </tr>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        <tr><td></td></tr>
+    </tbody>
+</table>

@@ -1,0 +1,27 @@
+﻿<div class="row margin-top-05">
+    <h1>Add / Edit SubCategory</h1>
+</div>
+<div class="row margin-top-05">
+    <div class="col-xs-2"><strong> Category : </strong></div>
+    <div class="col-xs-6">
+        <select [(ngModel)]="productSubCategory.productCategoryId" style="width:200px" name="Select name" class="form-control">
+            <option *ngFor="let item of productCategory" value={{item.productCategoryId}}>{{item.name}}</option>
+        </select>
+    </div>
+</div>
+<div class="margin-top-05">
+    <div class="row margin-top-05">
+        <div class="col-xs-2"><strong> Name : </strong></div>
+        <div class="col-xs-6"><input [(ngModel)]="productSubCategory.name" required style="width:200px"  class="form-control"/> </div>
+    </div>
+    <div class="row margin-top-05">
+        <div class="col-xs-12">
+            <button class="btn btn-primary" (click)="save()">
+                <span class="glyphicon glyphicon-saved"></span> Save
+            </button>
+            <button class="btn btn-primary" (click)="list()">
+                <span class="glyphicon glyphicon-list"></span> List
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<p><b>Instructions to run the project</b></p>
+<div>
+    <p>
+        There are some instructions to run this project. <br /><br/>
+        
+        You have to add commands to create database in NugetPackage console.
+        Commands are as following:<br/>
+        1. add-migration intial-migration -context TenrDbContext;<br/>
+        2. update-database -context TenrDbContext;<br/><br/>
+        3. Kindly chnange the server URL in crud.servive.ts
+        Kindly change the connection string in startup file as per your requirement.<br/><br/>
+
+        (options => options.UseSqlServer(@"Data Source=.\SQLEXPRESS;Initial Catalog=Tenrtestdb;User ID=sa;Password=Ms123456sm;Pooling=False;Integrated Security=True;Connect Timeout=30;"));
+
+
+
+    </p>
+</div>
